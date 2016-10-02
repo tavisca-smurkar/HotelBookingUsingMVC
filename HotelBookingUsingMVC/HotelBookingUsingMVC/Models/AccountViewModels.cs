@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
 namespace HotelBookingUsingMVC.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -9,12 +8,10 @@ namespace HotelBookingUsingMVC.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
-
     public class ExternalLoginListViewModel
     {
         public string ReturnUrl { get; set; }
     }
-
     public class SendCodeViewModel
     {
         public string SelectedProvider { get; set; }
@@ -27,7 +24,6 @@ namespace HotelBookingUsingMVC.Models
     {
         [Required]
         public string Provider { get; set; }
-
         [Required]
         [Display(Name = "Code")]
         public string Code { get; set; }
