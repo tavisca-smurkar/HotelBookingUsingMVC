@@ -1,0 +1,40 @@
+﻿@model List<HotelBookingUsingMVC.Database.Amenity>
+<body>
+    @using (Html.BeginForm("SelectAmenities", "Amenities"))
+    {
+        @Html.AntiForgeryToken()
+        <table class="table">
+            <tr>
+                <th>
+                    Amenity Name
+                </th>
+                <th>
+                    Charges
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AmenityName)
+
+                    </td>
+                    <td>
+                        
+                        @Html.DisplayFor(modelItem => item.Charges)
+                    </td>
+                    <td>
+                        @Html.HiddenFor(modelItem => item.AmenityId)
+                        @Html.HiddenFor(modelItem => item.AmenityName)
+                        @Html.CheckBoxFor(modelItem => item.isSelected)
+                        
+                    </td>
+
+                </tr>
+            }
+        </table>
+        <input type="submit" value="Submit" />
+    }
+</body>
