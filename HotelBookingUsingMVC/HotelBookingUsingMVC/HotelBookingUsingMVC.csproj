@@ -315,6 +315,7 @@
     <Content Include="Views\Hotels\Index.cshtml" />
     <Content Include="Views\Rooms\SelectRoomByHotelCode.cshtml" />
     <Content Include="Views\Amenities\SelectAmenities.cshtml" />
+    <Content Include="Views\Amenities\EditorTemplates\Amenity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

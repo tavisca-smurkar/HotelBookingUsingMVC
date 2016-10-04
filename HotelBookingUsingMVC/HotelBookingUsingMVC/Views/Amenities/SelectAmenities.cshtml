@@ -1,40 +1,23 @@
 ﻿@model List<HotelBookingUsingMVC.Database.Amenity>
 <body>
-    @using (Html.BeginForm("SelectAmenities", "Amenities"))
-    {
+   
+        @using (Html.BeginForm("SelectAmenities", "Amenities", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+
+        {
         @Html.AntiForgeryToken()
-        <table class="table">
-            <tr>
-                <th>
-                    Amenity Name
-                </th>
-                <th>
-                    Charges
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
+            <table class="table">
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AmenityName)
-
-                    </td>
-                    <td>
-                        
-                        @Html.DisplayFor(modelItem => item.Charges)
-                    </td>
-                    <td>
-                        @Html.HiddenFor(modelItem => item.AmenityId)
-                        @Html.HiddenFor(modelItem => item.AmenityName)
-                        @Html.CheckBoxFor(modelItem => item.isSelected)
-                        
-                    </td>
-
+                    <th>
+                        Amenity Name
+                    </th>
+                    <th>
+                        Charges
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </table>
-        <input type="submit" value="Submit" />
+                @Html.EditorFor(m => m)
+              
+            </table>
+        <input type="submit" value="Submit" id="save" />
     }
 </body>

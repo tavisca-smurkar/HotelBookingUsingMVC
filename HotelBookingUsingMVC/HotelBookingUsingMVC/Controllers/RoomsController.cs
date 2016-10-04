@@ -15,9 +15,7 @@ namespace HotelBookingUsingMVC.Controllers
             var rooms = db.Rooms.Where(r => r.HotelCode == hotelcode && r.RoomStatus == "Available").ToList();
             return View(rooms);
         }
-
-      
-        public ActionResult SelectRoom(int roomId)
+      public ActionResult SelectRoom(int roomId)
         {
             Session["RoomId"] = roomId;
             return RedirectToAction("SelectAmenities", "Amenities");

@@ -1,0 +1,13 @@
+﻿@model HotelBookingUsingMVC.Database.Amenity
+
+<tr>
+    <td colspan="3">
+        @Model.AmenityName
+        @Html.HiddenFor(m => m.AmenityName)
+    </td>
+    <td>
+        @Model.Charges
+        @Html.HiddenFor(m => m.Charges)
+    </td>
+    <td class="text-nowrap">@Html.CheckBoxFor(m => m.isSelected, new { @class = "chkSelect" })</td>
+</tr>
