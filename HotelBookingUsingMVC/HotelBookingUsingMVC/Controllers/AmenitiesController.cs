@@ -12,11 +12,11 @@ namespace HotelBookingUsingMVC.Controllers
         [HttpGet]
         public ActionResult SelectAmenities()
         {
+
             List<Amenity> amenities = db.Amenities.ToList();
             return View(amenities);
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult SelectAmenities(List<Amenity> amenities)
         {
             return Json(amenities, JsonRequestBehavior.AllowGet);
